@@ -1,15 +1,15 @@
 package service;
 
-import dao.VmDao;
+import dao.IVmDao;
 import model.Vm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class VmService implements IVmService {
+public class VmServiceImpl implements IVmService {
     @Autowired
-    private VmDao vmDao;
+    private IVmDao vmDao;
     @Override
     public List<Vm> findAllVm(){
         return vmDao.findAllVm();

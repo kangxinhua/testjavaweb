@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class VmDao implements IVmDao {
+public class VmDaoImpl implements IVmDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Override
