@@ -14,13 +14,13 @@
         http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- HandlerMapping -->
-    <bean
-            class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+    <!--&lt;!&ndash; HandlerMapping &ndash;&gt;-->
+    <!--<bean-->
+            <!--class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />-->
 
-    <!-- HandlerAdapter -->
-    <bean
-            class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
+    <!--&lt;!&ndash; HandlerAdapter &ndash;&gt;-->
+    <!--<bean-->
+            <!--class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />-->
     <!-- ViewResolver -->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">

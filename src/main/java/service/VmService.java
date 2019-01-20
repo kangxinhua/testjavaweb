@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class VmService {
+public class VmService implements IVmService {
     @Autowired
     private VmDao vmDao;
+    @Override
     public List<Vm> findAllVm(){
         return vmDao.findAllVm();
     }

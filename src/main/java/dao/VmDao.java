@@ -2,8 +2,6 @@ package dao;
 
 import model.Vm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.lang.Nullable;
@@ -14,9 +12,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class VmDao {
+public class VmDao implements IVmDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Override
     public List<Vm> findAllVm(){
         StringBuffer sql = new StringBuffer();
         sql.append(" SELECT * FROM vm ");
@@ -34,7 +33,7 @@ public class VmDao {
         });
         return vms;
     }
-
+    @Override
     public Vm findVm(String id){
         StringBuffer sql = new StringBuffer();
         sql.append(" SELECT * FROM vm ");
