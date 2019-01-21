@@ -14,4 +14,9 @@ public class VmServiceImpl implements IVmService {
     public List<Vm> findAllVm(){
         return vmDao.findAllVm();
     }
+
+    @Override
+    public Vm findVm(String id) {
+        return vmDao.findVm(id);
+    }
 }

@@ -58,7 +58,7 @@ public class TestOperation {
     }
 
     @Test
-    public void queryVm(){
+    public void queryVms(){
         Connection conn =  JdbcUtils.getConnection();
         String sql = " SELECT * FROM vm ";
         try {
@@ -86,7 +86,35 @@ public class TestOperation {
         }
 
     }
+    @Test
+    public void queryVm(){
+        Connection conn =  JdbcUtils.getConnection();
+        String sql = " SELECT * FROM vm WHERE vm.id = '001'";
+        try {
+            PreparedStatement  ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            String id = null;
+            String name = null;
+            String pro = null;
+            String app = null;
+            while (rs.next()){
+                id = rs.getString("id");
+                name = rs.getString("name");
+                pro = rs.getString("project");
+                app = rs.getString("application");
+                System.out.println("id = " + id);
+                System.out.println("name = " + name);
+                System.out.println("project = " + pro);
+                System.out.println("application = " + app);
+            }
+            JdbcUtils.close(rs);
+            JdbcUtils.close(ps);
+            JdbcUtils.close(conn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
+    }
 
 
 }
