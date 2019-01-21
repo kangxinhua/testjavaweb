@@ -11,6 +11,12 @@
     <title>ShowVm</title>
 </head>
 <body>
-${name}
+
+
+vm:<br/>
+id = ${id}<br/>
+name = ${name}<br/>
+project = ${project}<br/>
+application = ${application}<br/>
 </body>
 </html>
