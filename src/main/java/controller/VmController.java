@@ -16,10 +16,13 @@ public class VmController {
     @Autowired
     private IVmService vmService;
     @RequestMapping("/showVm")
-    public String showVm(HttpServletRequest request, HttpServletResponse response,Model model){
+    public String showVm(Model model){
        // List<Vm> vms = vmService.findAllVm();
         Vm vm = vmService.findVm("001");
-        model.addAttribute("name","vm");
+        model.addAttribute("id",vm.getId());
+        model.addAttribute("name",vm.getName());
+        model.addAttribute("project",vm.getProject());
+        model.addAttribute("application",vm.getApplication());
         return "ShowVm";
     }
 
